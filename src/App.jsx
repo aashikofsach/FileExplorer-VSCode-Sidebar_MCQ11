@@ -4,11 +4,15 @@ import { useState } from 'react';
 
 
 function List({ list }) {
+  const [show, setShow] = useState(false);
+
   return <div className='container'>
     {
       list.map((node) => <div key={node.id}>
+        {node.isFolder && <span onClick={() => setShow(prev => !prev)}>{show ? "-" : "+"} </span>}
         <span>{node.name}</span>
-       { node.children && <List list={node.children} />}
+
+        {show && node.children && <List list={node.children} />}
 
       </div>)
     }
