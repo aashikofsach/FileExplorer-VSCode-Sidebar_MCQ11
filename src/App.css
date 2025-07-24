@@ -15,3 +15,12 @@
 div span {
   cursor: pointer;
 }
+.parent {
+  position: relative;
+}
+.icon {
+  width: 20px;
+  margin-left: 15px;
+  position: absolute;
+  top: 2px;
+}
